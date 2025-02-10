@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunitoregular.woff");
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunitobold.woff");
+    font-weight: bold;
+}
+
+body {
+    font-family: Nunito, sans-serif;
+    background: #EDEEF3;
+}
+
+.layout {
+    display: flex;
+    position: relative;
+}
+
+.side-bar {
+    position: relative;
+    width: 250px;
+    background: #F7F7F7;
+    flex-shrink: 0;
+    min-height: 100vh;
+    padding: 0 17px;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: block;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+
+.navigation-item a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    padding: 13px 15px;
+    border-radius: 5px;
+}
+
+.navigation .active {
+    background: #467DF2;
+    border-radius: 5px;
+
+}
+
+.navigation-item a span {
+    color: #858796;
+    font-size: 14px;
+    line-height: normal;
+    margin-left: 10px;
+}
+
+.navigation .active a span {
+    color: #FFFFFF;
+}
+
+.navigation:hover .active {
+    background: #F7F7F7;
+    color: #858796;
+}
+
+.navigation-item:hover a {
+    background: #467DF2;
+}
+
+.navigation-item:hover a svg path {
+    fill: #FFFFFF;
+}
+
+.navigation-item:hover a span {
+    color: #FFFFFF;
+}
+
+.navigation:hover .active a span {
+    color: #858796;
+}
+
+.navigation:hover .active svg path {
+    fill: #858796;
+}
+
+/*я использовала намудреные ховеры, можно ли как-то оптимизировать
+код и сделать его читабельным? И как сделать, чтобы,
+когда я навожу на первый item к нему применялся
+белый цвет для иконки и текста?*/
+
+.feedback {
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    margin-bottom: 17px;
+		border: 1px solid transparent;
+}
+
+.feedback-subtitle {
+
+    width: 216px;
+    color: #4F4E4F;
+    font-size: 14px;
+    line-height: normal;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.feedback-subtitle a {
+    text-decoration: none;
+    color: #467DF2;
+    font-size: 14px;
+    line-height: normal;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.feedback-subtitle .left {
+    float: left;
+    margin-right: 6px;
+}
+
+.feedback:hover {
+    border-radius: 5px;
+    border: 1px solid #467DF2;
+    z-index: 3;
+}
+
+.content {
+    flex-grow: 1;
+    position: relative;
+}
+
+.header {
+    padding: 15px 40px;
+    background: #F7F7F7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-tasks {
+    position: relative;
+}
+
+.header-burger {
+    display: inline-block;
+    vertical-align: middle;
+		cursor: pointer;
+}
+
+.header-lists {
+    margin-left: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-list {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 40px;
+}
+
+.header-list-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.header-list a:hover,
+.header-list a svg path:hover {
+    color: #3D63D2;
+    fill: #3D63D2;
+}
+
+.header-list:last-child {
+    margin-right: 0;
+}
+
+.header-list-up {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.header-lists ul {
+    list-style: none;
+}
+
+.header-lists a {
+    text-decoration: none;
+    color: #858796;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.header .pop-up {
+    position: absolute;
+    top: 38px;
+    left: 190px;
+    padding: 30px 20px 15px 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.15);
+    width: 150px;
+}
+
+.header .pop-up ul {
+    list-style: none;
+}
+
+.header .pop-up a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+    color: #686464;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.header .pop-up a:hover {
+    color: #2F54A3;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+
+}
+
+.header-search-input {
+    position: relative;
+}
+
+.header-input {
+    border-radius: 10px;
+    border: 1px solid #E2E2E2;
+    background: #EFEFF5;
+    color: #000000;
+    font-size: 14px;
+    line-height: normal;
+    padding: 10px 20px 11px 45px;
+    outline: none;
+    width: 373px;
+    margin-right: 40px;
+}
+
+.header-input::placeholder {
+    color: #B3B3B3;
+}
+
+.search-button {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    border: 0;
+}
+
+.header .button {
+    border-radius: 10px;
+    background: #467DF2;
+    margin-left: 40px;
+    border: 0;
+    padding: 11px 18px 10px 18px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.header .button:hover {
+    background: #2F54A3;
+}
+
+.header-search svg {
+    cursor: pointer;
+}
+
+svg.header-schedule:hover path:first-child ,
+svg.header-schedule:hover path:last-child {
+    fill: #467DF2;
+}
+
+.work-space {
+    box-sizing: border-box;
+    border-top: 1px solid #E2E2E2;
+    padding: 25px 40px 53px 40px;
+}
+
+.work-space h1 {
+    color: #4F4E4F;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: normal;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.work-space-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.work-space-card {
+    position: relative;
+    border-radius: 10px;
+    background: #FFF;
+    cursor: pointer;
+    width: 350px;
+    margin-bottom: 40px;
+}
+
+.work-space-card img {
+    width: 100%;
+}
+
+.work-space-card:hover {
+    box-shadow: 0 4px 20px 0 rgba(102, 102, 102, 0.15);
+}
+
+.work-space-info {
+    box-sizing: border-box;
+    padding: 15px 27px;
+}
+
+.work-space-card-title {
+    color: #4F4E4F;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 25px;
+    margin-bottom: 8px;
+    width: 296px;
+}
+.work-space-card-description {
+    color: #4F4E4F;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 30px;
+    margin-bottom: 18px;
+}
+
+.work-space-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.work-space-status {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 4px 10px;
+}
+
+.work-space-link:hover {
+    color: #2F54A3;
+    fill: #2F54A3;
+}
+
+svg.work-space-icon:hover  path:first-child,
+svg.work-space-icon:hover  path:nth-child(2),
+svg.work-space-icon:hover  path:last-child,
+svg.work-space-icon-dote:hover ellipse {
+    fill: #2F54A3;
+}
+
+.work-space-status-text {
+    font-size: 14px;
+    line-height: 14px; /* 100% */
+}
+
+.work-space-status.moderation {
+    color: #4F4E4F;
+    background: rgba(247, 247, 247, 0.80);
+}
+
+.work-space-status.published {
+    background: #C6E0C3;
+    color: #027900;
+}
+
+.work-space-status.error {
+    background: rgba(255, 188, 188, 0.80);
+    color: #DB0C0C;
+}
+
+.support {
+    display: inline-block;
+    position: fixed;
+    right: -73px;
+    top: 50%;
+    transform: rotate(-90deg);
+    border-radius: 10px 10px 0 0;
+    background: #467DF2;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.support:hover {
+    background: #2F54A3;
+}
+
+.support-icon {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+svg.support-icon  {
+    transform: rotate(90deg);
+    margin: 0;
+}
+
+.support-title {
+    display: inline-block;
+    vertical-align: middle;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    margin-left: 10px;
+}
